@@ -93,9 +93,11 @@ class SecondPage extends StatelessWidget {
   Widget build(BuildContext context) {
     
     final List<Doggies> dogList = [
-    Doggies('Snow', 'Husky', "duo_app/images/husky.png"),
-    Doggies('Ace', 'Doberman', "duo_app/images/doberman.png"),
-    
+    Doggies('Snow', 'Husky', "images/husky.png"),
+    Doggies('Ace', 'Doberman', "images/doberman.png"),
+    Doggies('Tiny', 'Chihuahua', "images/chihuahua.png"),
+    Doggies('Buddy', 'Labrador', "images/labrador.png"),
+    Doggies('Dawgs 💀', 'PEEYEWW!', "images/foot.png"),
     ];
 
     return Scaffold(
@@ -105,12 +107,26 @@ class SecondPage extends StatelessWidget {
         itemBuilder: (context, index) {
           return ListTile(
             title: Text(dogList[index].name),
-            subtitle: Text(dogList[index].breed),
+            subtitle: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(dogList[index].breed),
+                const SizedBox(height: 4), // Spacing between text and image
+                Image.network(
+                  dogList[index].image,
+                  height: 100,
+                  width: 100,
+                ),
+              ],
+            ),
             trailing: ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: const Text('Test'),
+              style: OutlinedButton.styleFrom(
+                  side: BorderSide(color: Colors.purple),
+                ),
+              child: const Text('Adopt!'),
             ),
           );
         },
@@ -118,19 +134,6 @@ class SecondPage extends StatelessWidget {
     );
   }
 }
-
-/*
-body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Test'),
-        ),
-      ),
-    );
-  }
-} */
 
 class ThirdPage extends StatelessWidget {
   const ThirdPage({super.key});

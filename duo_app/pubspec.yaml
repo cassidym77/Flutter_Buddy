@@ -61,6 +61,8 @@ flutter:
     - assets/side_eye.gif
     - images/husky.png
     - images/doberman.png
+    - images/chihuahua.png
+    - images/foot.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
