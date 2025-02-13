@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreen),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'CassWasHere'),
+      home: const MyHomePage(title: 'Duo Buddy'),
     );
   }
 }
