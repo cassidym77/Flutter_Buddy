@@ -48,22 +48,53 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
+class Doggies {
+  final String name;
+  final String breed;
+
+  Doggies(this.name, this.breed);
+}
+
 // Second Page: Cassidy
 class SecondPage extends StatelessWidget {
   const SecondPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    
+    final List<Doggies> dog_list = [
+    Doggies('Snow', 'Husky'),
+    Doggies('Ace', 'Doberman'),
+    ];
+
     return Scaffold(
       appBar: AppBar(title: const Text("Cassidy's Page")),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Go Back'),
-        ),
+      body: ListView.builder(
+        itemCount: dog_list.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(dog_list[index].name),
+            subtitle: Text(dog_list[index].breed),
+            trailing: ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('Test'),
+            ),
+          );
+        },
       ),
     );
   }
 }
+
+/*
+body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text('Test'),
+        ),
+      ),
+ */
