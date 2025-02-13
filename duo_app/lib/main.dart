@@ -47,10 +47,21 @@ class MyHomePage extends StatelessWidget {
                 child: const Text("Cass Was Here"),
               ),
               const SizedBox(height: 30),
+              ElevatedButton(
+                onPressed: () {
+                  // Navigate to SecondPage
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ThirdPage()),
+                  );
+                },
+                child: const Text("Maureen Was Here"),
+              ),
+              const SizedBox(height: 30),
               Image.asset(
                 "assets/puppy.gif",
-                height: 120.0,
-                width: 120.0,
+                height: 400.0,
+                width: 400.0,
               ),
           ],
         ),
@@ -72,6 +83,40 @@ class SecondPage extends StatelessWidget {
             Navigator.pop(context);
           },
           child: const Text('Go Back'),
+        ),
+      ),
+    );
+  }
+}
+
+class ThirdPage extends StatelessWidget {
+  const ThirdPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Maureen Page')),
+      body: Center(
+        child: Column(
+          children: [
+            const SizedBox(height: 50),
+            Text('Found what you were looking for?'),
+            const SizedBox(height: 20),
+            Image.asset(
+              "assets/side_eye.gif",
+              height: 300.0,
+              width: 300.0,
+            ),
+            const SizedBox(height: 30),
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text('Say bye to the dog'),
+              ),
+            ),
+          ],
         ),
       ),
     );
