@@ -33,15 +33,43 @@ class MyHomePage extends StatelessWidget {
         title: Text(title),
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // Navigate to SecondPage
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SecondPage()),
-            );
-          },
-          child: const Text("Cass Was Here"),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+              ElevatedButton(
+                onPressed: () {
+                  // Navigate to SecondPage
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const SecondPage()),
+                  );
+                },
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(color: Colors.black),
+                ),
+                child: const Text("Cass Was Here"),
+              ),
+              const SizedBox(height: 30),
+              ElevatedButton(
+                onPressed: () {
+                  // Navigate to SecondPage
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ThirdPage()),
+                  );
+                },
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(color: Colors.black),
+                ),
+                child: const Text("Maureen Was Here 🫡"),
+              ),
+              const SizedBox(height: 30),
+              Image.asset(
+                "assets/puppy.gif",
+                height: 350.0,
+                width: 350.0,
+              ),
+          ],
         ),
       ),
     );
@@ -61,6 +89,60 @@ class SecondPage extends StatelessWidget {
             Navigator.pop(context);
           },
           child: const Text('Go Back'),
+        ),
+      ),
+    );
+  }
+}
+
+class ThirdPage extends StatelessWidget {
+  const ThirdPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      // appBar: AppBar(title: const Text('Maureen''s Page')),
+      body: Center(
+        child: Column(
+          children: [
+            Container(
+              width: double.infinity,
+              height: 80,
+              color: Colors.black,
+              alignment: Alignment.center,
+              child: const Text(
+                "Maureen's Page",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            const SizedBox(height: 50),
+            Text(
+              'Found what you were looking for?',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            ),
+            const SizedBox(height: 20),
+            Image.asset(
+              "assets/side_eye.gif",
+              height: 300.0,
+              width: 300.0,
+            ),
+            const SizedBox(height: 30),
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(color: Colors.black),
+                ),
+                child: const Text('👋🏽 Say bye to the dog 👋🏽'),
+              ),
+            ),
+          ],
         ),
       ),
     );
