@@ -52,7 +52,9 @@ class Doggies {
   final String name;
   final String breed;
 
-  Doggies(this.name, this.breed);
+  final String image;
+
+  Doggies(this.name, this.breed, this.image);
 }
 
 // Second Page: Cassidy
@@ -62,19 +64,20 @@ class SecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
-    final List<Doggies> dog_list = [
-    Doggies('Snow', 'Husky'),
-    Doggies('Ace', 'Doberman'),
+    final List<Doggies> dogList = [
+    Doggies('Snow', 'Husky', "duo_app/images/husky.png"),
+    Doggies('Ace', 'Doberman', "duo_app/images/doberman.png"),
+    
     ];
 
     return Scaffold(
       appBar: AppBar(title: const Text("Cassidy's Page")),
       body: ListView.builder(
-        itemCount: dog_list.length,
+        itemCount: dogList.length,
         itemBuilder: (context, index) {
           return ListTile(
-            title: Text(dog_list[index].name),
-            subtitle: Text(dog_list[index].breed),
+            title: Text(dogList[index].name),
+            subtitle: Text(dogList[index].breed),
             trailing: ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
