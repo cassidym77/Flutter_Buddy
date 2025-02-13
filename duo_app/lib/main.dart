@@ -44,6 +44,9 @@ class MyHomePage extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => const SecondPage()),
                   );
                 },
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(color: Colors.black),
+                ),
                 child: const Text("Cass Was Here"),
               ),
               const SizedBox(height: 30),
@@ -55,13 +58,16 @@ class MyHomePage extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => const ThirdPage()),
                   );
                 },
-                child: const Text("Maureen Was Here"),
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(color: Colors.black),
+                ),
+                child: const Text("Maureen Was Here 🫡"),
               ),
               const SizedBox(height: 30),
               Image.asset(
                 "assets/puppy.gif",
-                height: 400.0,
-                width: 400.0,
+                height: 350.0,
+                width: 350.0,
               ),
           ],
         ),
@@ -95,12 +101,29 @@ class ThirdPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Maureen Page')),
+      // appBar: AppBar(title: const Text('Maureen''s Page')),
       body: Center(
         child: Column(
           children: [
+            Container(
+              width: double.infinity,
+              height: 80,
+              color: Colors.black,
+              alignment: Alignment.center,
+              child: const Text(
+                "Maureen's Page",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
             const SizedBox(height: 50),
-            Text('Found what you were looking for?'),
+            Text(
+              'Found what you were looking for?',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            ),
             const SizedBox(height: 20),
             Image.asset(
               "assets/side_eye.gif",
@@ -113,7 +136,10 @@ class ThirdPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: const Text('Say bye to the dog'),
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(color: Colors.black),
+                ),
+                child: const Text('👋🏽 Say bye to the dog 👋🏽'),
               ),
             ),
           ],
