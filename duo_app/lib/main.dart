@@ -112,6 +112,10 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {} 
+                , child: Center())
           ],
         ),
       ),
@@ -123,7 +127,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
 
 class FirstRoute extends StatelessWidget {
   const FirstRoute({super.key});
