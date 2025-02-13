@@ -33,15 +33,26 @@ class MyHomePage extends StatelessWidget {
         title: Text(title),
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // Navigate to SecondPage
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SecondPage()),
-            );
-          },
-          child: const Text("Cass Was Here"),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+              ElevatedButton(
+                onPressed: () {
+                  // Navigate to SecondPage
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const SecondPage()),
+                  );
+                },
+                child: const Text("Cass Was Here"),
+              ),
+              const SizedBox(height: 30),
+              Image.asset(
+                "assets/puppy.gif",
+                height: 120.0,
+                width: 120.0,
+              ),
+          ],
         ),
       ),
     );
